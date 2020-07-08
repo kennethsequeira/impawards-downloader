@@ -22,9 +22,8 @@ def download_img(file_name):
 if int(a) <= 0 or int(b) <= 0 or a==b :
     print('invalid range')
 else:
-    for i in tqdm(range(int(b)-int(a)+1), total=int(b)-int(a)+1,initial=int(a)):
-        print (i)
-        '''if i == 0:
+    for i in tqdm(range(int(a), int(b+1)):
+        if i == 0:
             pass
         #for version 1 of posters, skip ver_def download_img(i):
         elif i == 1:
@@ -44,4 +43,4 @@ else:
                 download_img(movie_name + '_ver' + str(i) + '_' + size + '.jpg')
                 print('downloading '+ file_name)
             else:
-                print (file_name + ' does not exist. Check size availability')'''
+                print (file_name + ' does not exist. Check size availability')
