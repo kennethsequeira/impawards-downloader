@@ -3,13 +3,13 @@ from tqdm import tqdm
 
 website = 'http://www.impawards.com' #declare website url
 
-'''movie_name = input('Enter movie name as is on site upto .html or _ver: ') #movie name to be sanitized
+movie_name = input('Enter movie name as is on site upto .html or _ver: ') #movie name to be sanitized
 
 year = input('Enter Year of release (check the url): ') #movie release year
 
 size = input('Choose size. One of none, xlg, xxlg: ') #poster size
 
-web_url = website+'/'+ year + '/posters/' + movie_name'''
+web_url = website+'/'+ year + '/posters/' + movie_name
 
 a = input('Enter start range for poster: ')
 b = input('Enter end range for poster: ')
@@ -22,7 +22,7 @@ def download_img(file_name):
 if int(a) <= 0 or int(b) <= 0 or a==b :
     print('invalid range')
 else:
-    for i in tqdm(range(int(a), int(b+1))):
+    for i in tqdm(range(int(a), int(b)+1)):
         if i == 0:
             pass
         #for version 1 of posters, skip ver_def download_img(i):
