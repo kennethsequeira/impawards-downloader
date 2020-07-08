@@ -22,7 +22,7 @@ def download_img(file_name):
 if int(a) <= 0 or int(b) <= 0 or a==b :
     print('invalid range')
 else:
-    for i in tqdm(range(int(a), int(b+1)):
+    for i in tqdm(range(int(a), int(b+1))):
         if i == 0:
             pass
         #for version 1 of posters, skip ver_def download_img(i):
