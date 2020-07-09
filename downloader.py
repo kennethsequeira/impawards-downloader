@@ -1,4 +1,5 @@
 import urllib3.request
+import os
 from tqdm import tqdm
 
 website = 'http://www.impawards.com' #declare website url
@@ -15,8 +16,15 @@ a = input('Enter start range for poster: ')
 b = input('Enter end range for poster: ')
 http = urllib3.PoolManager()
 
-def download_img(file_name):
-    with open(file_name, 'wb') as f:
+#check for a folder in this directory called downloads. If not, create one
+
+if os.path.exists('downloads'):
+    pass
+else:
+    os.makedirs('downloads')
+
+def download_img(file_name, req):
+    with open(os.path.join('downloads',file_name), 'wb') as f: #download files in this folder
         f.write(req.data)
 
 if int(a) <= 0 or int(b) <= 0 or a==b :
@@ -31,7 +39,7 @@ else:
             req = http.request('GET',file_name)
             if req.status == 200:
                 print('downloading '+ file_name)
-                download_img(movie_name + '_ver' + str(i) + '_' + size + '.jpg')
+                download_img(movie_name + '_ver' + str(i) + '_' + size + '.jpg',req)
             else:
                 print (file_name + ' does not exist. Check size availability')
         
@@ -40,7 +48,7 @@ else:
             file_name = web_url + '_ver' + str(i) + '_' + size + '.jpg'
             req = http.request('GET', file_name)
             if req.status == 200:
-                download_img(movie_name + '_ver' + str(i) + '_' + size + '.jpg')
+                download_img(movie_name + '_ver' + str(i) + '_' + size + '.jpg',req)
                 print('downloading '+ file_name)
             else:
                 print (file_name + ' does not exist. Check size availability')
