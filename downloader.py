@@ -16,13 +16,15 @@ a = input('Enter start range for poster: ')
 b = input('Enter end range for poster: ')
 http = urllib3.PoolManager()
 
+#check for a folder in this directory called downloads. If not, create one
+
 if os.path.exists('downloads'):
     pass
 else:
     os.makedirs('downloads')
 
 def download_img(file_name, req):
-    with open(os.path.join('downloads',file_name), 'wb') as f:
+    with open(os.path.join('downloads',file_name), 'wb') as f: #download files in this folder
         f.write(req.data)
 
 if int(a) <= 0 or int(b) <= 0 or a==b :

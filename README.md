@@ -21,3 +21,4 @@ Enter the name as `wonder_woman_nineteen_eighty_four` and `2020` as the year
 
 2. Select size. It has to be one out of xlg or xxlg. Leave blank for regular/normal size.
 
+3. Posters will be downloaded to a local directory `downloads`
