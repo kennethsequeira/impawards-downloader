@@ -4,9 +4,9 @@ from tqdm import tqdm
 
 website = 'http://www.impawards.com' #declare website url
 
-movie_name = input('Enter movie name as is on site upto .html or _ver: ') #movie name to be sanitized
+movie_name = input('Enter movie name: ') #movie name to be sanitized
 
-year = input('Enter Year of release (check the url): ') #movie release year
+year = input('Enter Year of release: ') #movie release year
 
 size = input('Choose size. One of none, xlg, xxlg: ') #poster size
 
