@@ -4,9 +4,9 @@ from tqdm import tqdm
 
 website = 'http://www.impawards.com' #declare website url
 
-movie_name = input('Enter movie name as is on site upto .html or _ver: ') #movie name to be sanitized
+movie_name = input('Enter movie name: ') #movie name to be sanitized
 
-year = input('Enter Year of release (check the url): ') #movie release year
+year = input('Enter Year of release: ') #movie release year
 
 size = input('Choose size. One of none, xlg, xxlg: ') #poster size
 
@@ -35,20 +35,28 @@ else:
             pass
         #for version 1 of posters, skip ver_def download_img(i):
         elif i == 1:
-            file_name = web_url + '_' + size + '.jpg'
+            if size == '':
+                    file_name = web_url + '.jpg'
+            else:    
+                file_name = web_url + '_' + size + '.jpg'
             req = http.request('GET',file_name)
             if req.status == 200:
                 print('downloading '+ file_name)
                 download_img(movie_name + '_ver' + str(i) + '_' + size + '.jpg',req)
             else:
-                print (file_name + ' does not exist. Check size availability')
+                print(req.status)
+                print (file_name + ' does not exist.')
         
         #download for remaining posters
         else:
-            file_name = web_url + '_ver' + str(i) + '_' + size + '.jpg'
+            if size == '':
+                file_name = web_url + '_ver' + str(i) + '.jpg'
+            else:
+                file_name = web_url + '_ver' + str(i) + '_' + size + '.jpg'
             req = http.request('GET', file_name)
             if req.status == 200:
                 download_img(movie_name + '_ver' + str(i) + '_' + size + '.jpg',req)
                 print('downloading '+ file_name)
             else:
-                print (file_name + ' does not exist. Check size availability')
+                print(req.status)
+                print(file_name + ' does not exist.')
