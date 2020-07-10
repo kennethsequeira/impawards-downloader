@@ -1,15 +1,19 @@
 # Impawards Poster Downloader
 
-Low effort Python script to download movie posters from impawards.com
+> *Low effort Python script to download movie posters from impawards.com.*
 
 
 ### Installation
 
-`$ git clone https://github.com/kennethsequeira/impawards-downloader && cd impawards-downloader`
+```console
+$ git clone https://github.com/kennethsequeira/impawards-downloader && cd impawards-downloader
+```
 
 ### Setup
 
-`$ pip install -r requirements.txt`
+```console
+$ pip install -r requirements.txt
+```
 
 ### Usage 
 
