@@ -1,6 +1,6 @@
 # Impawards Poster Downloader
 
-> *Low effort Python script to download movie posters from impawards.com.*
+> *Low effort Python script to download movie posters from impawards.com. using urllib3*
 
 
 ### Installation
@@ -29,4 +29,7 @@ Enter the name as `wonder_woman_nineteen_eighty_four` and `2020` as the year
 
 3. Posters will be downloaded to a local directory `downloads`
 
-![](/.github/imp-down.gif)
+
+
+https://user-images.githubusercontent.com/33246109/169824204-d3d0474d-c5b8-4204-9f42-87a0751a3a40.mp4
+
